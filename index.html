@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for featured image positioning */
+        .featured-image-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .featured-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recipe Finder</h1>
+            <p>Find delicious recipes based on ingredients you have</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="ingredientSearch" placeholder="Enter ingredients (e.g., chicken, rice, tomatoes)">
+            <button class="btn" id="searchBtn">Search Recipes</button>
+        </div>
+
+        <!-- Featured Image Section -->
+        <div class="featured-image-container">
+            <img class="featured-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXZylLZLdEOnpA7xCFv_tEqFvcThCY70wK7Q&s" alt="Featured Recipe">
+        </div>
+
+        <div id="reciperesult" class="recipes-grid">
+            <!-- Recipes will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalRecipeContent"></div>
+        </div>
+    </div>
+
+    <!-- Substitution Modal -->
+    <div id="substituteModal" class="modal">
+        <div class="sub-modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Substitutes for <span id="substitute-ingredient-name"></span></h2>
+            <div id="substitute-results"></div>
+        </div>
+    </div>
+
+    <script src="test1.js"></script>
+</body>
+</html>
