@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <div class="page-overlay"></div>
+
+  <main class="app-shell">
+    <header class="header">
+      <div>
+        <h1>🍽 Recipe Finder</h1>
+        <p>Find recipes using your ingredients and view substitutes instantly.</p>
+      </div>
+      <button id="savedBtn" class="icon-btn">❤️ Saved</button>
+      <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    </header>
+
+    <section class="controls-panel">
+      <div class="filters">
+        <select id="dietFilter">
+          <option value="all">All</option>
+          <option value="veg">Vegetarian</option>
+          <option value="nonveg">Non-Vegetarian</option>
+        </select>
+
+        <select id="timeFilter">
+          <option value="all">Any Time</option>
+          <option value="15">Under 15 mins</option>
+          <option value="30">Under 30 mins</option>
+          <option value="60">Under 1 hour</option>
+        </select>
+      </div>
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="ingredientSearch"
+          placeholder="Enter ingredients (e.g. egg, rice, tomato)"
+        />
+        <button class="btn" id="searchBtn">Search Recipes</button>
+      </div>
+
+      <div class="history-wrap">
+        <button id="historyToggle" class="history-btn">📜 Show Recent Searches</button>
+        <div id="history" class="history-box" style="display: none;"></div>
+      </div>
+    </section>
+
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h2>Cook smarter with what you already have</h2>
+        <p>Search, filter, view instructions, and get ingredient substitutes in one place.</p>
+      </div>
+    </section>
+
+    <section>
+      <div id="reciperesult" class="recipes-grid"></div>
+      <div id="savedSection" style="display:none;">
+    <h2>❤️ Saved Recipes</h2>
+    <div id="savedRecipesGrid" class="recipes-grid"></div>
+</div>
+    </section>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div id="recipeModal" class="modal">
+    <div class="modal-content recipe-layout">
+      <button class="close-modal" data-close="recipeModal">&times;</button>
+
+      <div class="steps-section">
+        <h2 id="recipeTitle">Recipe Title</h2>
+        <img id="recipeImage" class="modal-main-image" src="" alt="Recipe image" />
+        <div class="recipe-meta">
+          <span id="recipeTime">⏱ 0 mins</span>
+          <span id="recipeServings">👨‍👩‍👧‍👦 0 servings</span>
+        </div>
+        <div id="recipeSteps" class="steps-list"></div>
+      </div>
+
+      <div class="ingredients-section">
+        <h3>Ingredients</h3>
+        <ul id="ingredientList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Substitute Modal -->
+  <div id="substituteModal" class="modal">
+    <div class="modal-content substitute-content">
+      <button class="close-modal" data-close="substituteModal">&times;</button>
+      <h2>Substitutes for <span id="substitute-ingredient-name"></span></h2>
+      <div id="substitute-results"></div>
+    </div>
+  </div>
+
+  <script src="test3.js" defer></script>
+</body>
+</html>
